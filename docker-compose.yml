@@ -5,9 +5,9 @@ services:
     ports:
       - 9082:8080
     networks:
-      - auth0nestjs
+      - apiblog
   postgres:
-    image: postgres:12
+    image: postgres:16
     volumes:
       - data-volume:/data/db
     ports:
@@ -17,8 +17,8 @@ services:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_DB: ${DATABASE_NAME}
     networks:
-      - auth0nestjs
+      - apiblog
 networks:
-  auth0nestjs:
+  apiblog:
 volumes:
   data-volume:
